@@ -1,5 +1,12 @@
 import java.util.*;
 
+/*
+* @ Shrimad Bhagwat
+*
+* Modeling Business Problem
+* Daily Dish Selection App by MOM
+**/
+
 class Dish {
     int dishCount;
     Scanner sc = new Scanner(System.in);
@@ -68,7 +75,7 @@ public class MomsKitchen {
                 printList(setDishes);
             }
             else if (option == 1) {
-                System.out.println("\n1.Set Dishes \n2.See Choices");
+                System.out.println("\n----------\n1.Set Dishes \n2.See Choices(After Choosing)");
                 int func = sc.nextInt();
                 if(func==1){
                     System.out.println("Enter number of dishes: ");
@@ -85,13 +92,20 @@ public class MomsKitchen {
                 System.out.print("\nHow many members ? ");
                 int memberCount = sc.nextInt();
                 int[] member = new int[memberCount];
-                for (int i = 0; i < member.length; i++) {
-                    finalChoice[i] = 9;
+                if(setDishes.length>0){
+
+                    for (int i = 0; i < member.length; i++) {
+                        finalChoice[i] = 9;
+                    }
+                    System.out.println("Enter dish number to chose\n");
                 }
-                System.out.println("Enter dish number to chose\n");
+                else{
+                    System.out.println("-----Set Dishes First!-----");
+                    continue;
+                }
                 try {
                     for (int i = 0; i < member.length; i++) {
-                            System.out.print("Choice of member " + i + " ");
+                            System.out.print("Choice of member " + i + ": ");
                             int index = sc.nextInt();
                             int count = choice[index];
                             choice[index] = ++count;
@@ -99,6 +113,7 @@ public class MomsKitchen {
                         }
                 } catch (Exception e) {
                     System.out.println("Set Dishes First!");
+                    
                 }
 
                 System.out.println("\nChoices list output");
