@@ -109,7 +109,7 @@ public class MomsKitchen {
                             int index = sc.nextInt();
                             int count = choice[index];
                             choice[index] = ++count;
-                            finalChoice[i] = index;
+                            finalChoice[i] = index;        
                         }
                 } catch (Exception e) {
                     System.out.println("Set Dishes First!");
@@ -144,6 +144,6 @@ public class MomsKitchen {
             }
             
         }
-
+        sc.close();
     }
 }
